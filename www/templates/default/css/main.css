@@ -1,0 +1,251 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: wheat;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: minmax(200px, 250px) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header header" "leftColumn centerColumn" "footer footer";
+}
+.hideme {
+  display: none;
+}
+input {
+  opacity: .6;
+  color: grey;
+  text-align: center;
+}
+#header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+#leftColumn {
+  grid-area: leftColumn;
+  margin-right: 20px;
+}
+#leftColumn .menuCaption {
+  text-align: center;
+  text-transform: uppercase;
+  color: midnightblue;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+#leftColumn .menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#leftColumn .menu li a {
+  color: darkgrey;
+  font-size: 14px;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#leftColumn .menu li:hover {
+  background: #153243;
+}
+#leftColumn .menu .mainMenu {
+  margin-top: 10px;
+  border-top: 1px solid #4a4a4a;
+  margin-left: 5px;
+}
+#leftColumn .menu .mainMenu a {
+  font-weight: bold;
+}
+#leftColumn .menu .subMenu {
+  margin-left: 15px;
+}
+#leftColumn .cartCaption {
+  display: block;
+  text-align: center;
+}
+#leftColumn .cartCaption a {
+  text-decoration: none;
+  color: lightslategrey;
+  text-transform: uppercase;
+}
+#leftColumn .cartCaption span {
+  color: midnightblue;
+  font-weight: bold;
+}
+#leftColumn #registerBox {
+  margin-bottom: 50px;
+}
+#leftColumn #registerBox,
+#leftColumn #loginBox {
+  text-align: center;
+}
+#leftColumn #registerBox input[type="text"],
+#leftColumn #loginBox input[type="text"],
+#leftColumn #registerBox input[type="password"],
+#leftColumn #loginBox input[type="password"] {
+  height: 26px;
+  font-size: 14px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  border-radius: 4px;
+  padding-left: 24px;
+  text-align: start;
+  font-style: italic;
+}
+#leftColumn #registerBox input[type="text"]:hover,
+#leftColumn #loginBox input[type="text"]:hover,
+#leftColumn #registerBox input[type="password"]:hover,
+#leftColumn #loginBox input[type="password"]:hover {
+  box-shadow: 0 0 6px 2px rgba(58, 219, 253, 0.3);
+}
+#leftColumn #registerBox input[type="button"],
+#leftColumn #loginBox input[type="button"] {
+  text-align: center;
+  display: block;
+  margin: 5px auto 20px auto;
+  padding: 13px 30px;
+  font-size: 16px;
+  background: #fff;
+  color: #2c536c;
+  border: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(125, 125, 125, 0.8);
+  /*&:active:before {
+				border: none;
+				//box-shadow: 0 0 10px rgba(0,0,0,.6) inset;
+				width: 178px;
+			}*/
+}
+#leftColumn #registerBox input[type="button"]:hover,
+#leftColumn #loginBox input[type="button"]:hover {
+  border-bottom: 3px solid #7db2c3;
+  box-shadow: none;
+  transition: all .5s;
+  background: blue;
+  color: #eee;
+}
+#leftColumn #registerBox input[type="button"]:active,
+#leftColumn #loginBox input[type="button"]:active {
+  width: 178px;
+  border-radius: 5px;
+  border: none;
+  bottom: -7px;
+  box-shadow: none;
+}
+#leftColumn #registerBox .input::before,
+#leftColumn #loginBox .input::before {
+  font-family: "FontAwesome";
+  position: absolute;
+  font-size: 20px;
+  padding: 5px 0 0 12px;
+  color: #2c536c;
+}
+#leftColumn #registerBox .input:hover::before,
+#leftColumn #loginBox .input:hover::before {
+  color: #319ebc;
+  transition: all .3s;
+}
+#leftColumn #registerBox .email::before,
+#leftColumn #loginBox .email::before {
+  content: "\f007";
+}
+#leftColumn #registerBox .password::before,
+#leftColumn #loginBox .password::before {
+  content: "\f023";
+}
+#leftColumn #registerBox .loginBtn input[type="button"]:active,
+#leftColumn #loginBox .loginBtn input[type="button"]:active {
+  width: 118px;
+}
+#centerColumn {
+  grid-area: centerColumn;
+}
+#centerColumn .prod-wrap {
+  text-align: center;
+}
+#centerColumn .categoryProducts {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  list-style: none;
+}
+#centerColumn .products {
+  text-align: center;
+  flex-basis: 200px;
+}
+#centerColumn .products a {
+  color: darkgrey;
+  font-size: 14px;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#centerColumn .pageTitle {
+  display: block;
+  text-align: center;
+}
+#centerColumn .categoryName {
+  display: block;
+  text-align: center;
+}
+#centerColumn .categoryName li {
+  list-style: none;
+}
+#centerColumn .categoryName li a {
+  text-decoration: none;
+  color: #153243;
+}
+#centerColumn .categoryName li a:hover {
+  color: lightseagreen;
+}
+#centerColumn .ordersData {
+  display: block;
+  text-align: center;
+}
+#centerColumn .ordersData h3 {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#centerColumn .ordersData h4 {
+  font-size: 18px;
+}
+#centerColumn .cartOrdersHead {
+  margin-top: -15px;
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr 1.2fr 0.8fr 1fr 1fr;
+  text-align: center;
+}
+#centerColumn .cartOrdersHead h5 {
+  flex-wrap: wrap;
+}
+#centerColumn .cartOrdersInfo {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr 1.2fr 0.8fr 1fr 1fr;
+  text-align: center;
+}
+#centerColumn .cartOrdersInfo .prodName {
+  display: flex;
+  justify-content: start;
+}
+#centerColumn .cartOrdersInfo li {
+  list-style: none;
+  flex-wrap: nowrap;
+}
+#centerColumn .cartOrdersInfo li a {
+  text-decoration: none;
+  color: black;
+}
+#centerColumn .cartOrdersInfo li a:hover {
+  color: blueviolet;
+}
+#footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  background: darkgray;
+}
+/*# sourceMappingURL=main.css.map */
