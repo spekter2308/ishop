@@ -11,6 +11,9 @@ body {
 .hideme {
   display: none;
 }
+#registerBoxHidden {
+  display: none;
+}
 input {
   opacity: .6;
   color: grey;
@@ -64,6 +67,7 @@ input {
 #leftColumn .cartCaption {
   display: block;
   text-align: center;
+  margin-bottom: 50px;
 }
 #leftColumn .cartCaption a {
   text-decoration: none;
@@ -74,15 +78,28 @@ input {
   color: midnightblue;
   font-weight: bold;
 }
-#leftColumn #registerBox {
-  margin-bottom: 50px;
-}
 #leftColumn #registerBox,
 #leftColumn #loginBox {
   text-align: center;
 }
+#leftColumn #registerBox .showHidden,
+#leftColumn #loginBox .showHidden {
+  cursor: pointer;
+}
+#leftColumn #registerBox .showHidden:hover,
+#leftColumn #loginBox .showHidden:hover {
+  margin: 0 20px 20px;
+  background: white;
+  transition: all .3s;
+  color: blue;
+  height: 25px;
+  padding-top: 10px;
+  box-shadow: 2px 2px 3px black;
+}
 #leftColumn #registerBox input[type="text"],
 #leftColumn #loginBox input[type="text"],
+#leftColumn #registerBox input[type="email"],
+#leftColumn #loginBox input[type="email"],
 #leftColumn #registerBox input[type="password"],
 #leftColumn #loginBox input[type="password"] {
   height: 26px;
@@ -96,6 +113,8 @@ input {
 }
 #leftColumn #registerBox input[type="text"]:hover,
 #leftColumn #loginBox input[type="text"]:hover,
+#leftColumn #registerBox input[type="email"]:hover,
+#leftColumn #loginBox input[type="email"]:hover,
 #leftColumn #registerBox input[type="password"]:hover,
 #leftColumn #loginBox input[type="password"]:hover {
   box-shadow: 0 0 6px 2px rgba(58, 219, 253, 0.3);
@@ -158,6 +177,22 @@ input {
 #leftColumn #registerBox .loginBtn input[type="button"]:active,
 #leftColumn #loginBox .loginBtn input[type="button"]:active {
   width: 118px;
+}
+#leftColumn #userBox {
+  margin-top: 30px;
+  text-align: center;
+}
+#leftColumn #userBox a {
+  display: block;
+  padding: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: darkslategray;
+  font-size: 17px;
+  font-weight: bold;
+}
+#leftColumn #userBox a .fa {
+  margin-right: 3px;
 }
 #centerColumn {
   grid-area: centerColumn;
@@ -241,6 +276,51 @@ input {
 }
 #centerColumn .cartOrdersInfo li a:hover {
   color: blueviolet;
+}
+#centerColumn .userData {
+  display: flex;
+  flex-direction: column;
+}
+#centerColumn .userData .inputBox {
+  display: flex;
+  height: 30px;
+  font-size: 16px;
+  margin: 10px;
+}
+#centerColumn .userData .inputBox .labelText {
+  width: 250px;
+  text-align: center;
+}
+#centerColumn .userData .inputBox input {
+  width: 100%;
+  margin-right: 20px;
+}
+#centerColumn .button {
+  text-align: center;
+  float: right;
+  display: block;
+  margin: 5px 20px 20px auto;
+  padding: 13px 30px;
+  font-size: 16px;
+  background: #fff;
+  color: #2c536c;
+  border: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(125, 125, 125, 0.8);
+}
+#centerColumn .button:hover {
+  border-bottom: 3px solid #7db2c3;
+  box-shadow: none;
+  transition: all .5s;
+  background: blue;
+  color: #eee;
+}
+#centerColumn .button:active {
+  width: 178px;
+  border-radius: 5px;
+  border: none;
+  bottom: -7px;
+  box-shadow: none;
 }
 #footer {
   grid-area: footer;

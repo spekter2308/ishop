@@ -99,7 +99,7 @@ function checkUserEmail($email){
  *
  * @param $email почта (логін)
  * @param $pwd пароль
- * @return array мамив даних користувача
+ * @return array маcив даних користувача
  */
 function loginUser($email, $pwd){
 	global $db;
@@ -115,6 +115,50 @@ function loginUser($email, $pwd){
 	} else {
 		$rs['success'] = false;
 	}
+
+	return $rs;
+}
+
+
+/**
+ * Зміна даних користувача
+ *
+ * @param $name - ім'я користувача
+ * @param $phone - телефон
+ * @param $address - адреса
+ * @param $pwd1 - новий пароль
+ * @param $pwd2 - повтор нового паролю
+ * @param $curPwd - нинішній пароль
+ * @return bool true - в випадку успіху
+ */
+function updateUserData($name, $phone, $address, $pwd1, $pwd2, $curPwd){
+	global $db;
+
+	$email = htmlspecialchars($db->real_escape_string($_SESSION['user']['email']));
+	$name = $db->real_escape_string($name);
+	$phone = $db->real_escape_string($phone);
+	$address = $db->real_escape_string($address);
+	$pwd1 = trim($pwd1);
+	$pwd2 = trim($pwd2);
+
+	$newPwd = null;
+	if($pwd1 and ($pwd1 == $pwd2)){
+		$newPwd = md5($pwd1);
+	}
+
+	$sql = "UPDATE users SET ";
+
+	if($newPwd){
+		$sql .= "`pwd` = '{$newPwd}', ";
+	}
+
+	$sql .= "`name` = '{$name}',
+			`phone` = '{$phone}',
+			`address` = '{$address}'
+			WHERE `email` = '{$email}' AND `pwd` = '{$curPwd}'		
+			LIMIT 1";
+
+	$rs = mysqli_query($db, $sql);
 
 	return $rs;
 }

@@ -89,12 +89,13 @@ function registerNewUser(){
 		success: function(data){
 			console.log(data);
 			if(data['success']){
-				alert(data['message']);
+				location.reload();
 
+				alert(data['message']);
 				//блок в лівому стовбці
 				$('#registerBox').hide();
-				//$('#displayName').html(data['userName']);
-				$('#userBox').show();
+				$('#displayName').html(data['userName']);
+				$('#userBox').setTimeout(300).show();
 
 				//сторінка замовлення
 				/*$('#loginBox').hide();
@@ -122,12 +123,13 @@ function login(){
 		dataType: 'json',
 		success: function(data){
 			if (data['success']) {
+				location.reload();
+
 				$('#loginBox').hide();
+
 				$('#registerBox').hide();
-
 				$('#displayName').html(data['displayName']);
-				$('#userBox').show();
-
+				$('#userBox').setTimeout(300).show();
 				// заполняем поля на странице заказа
 				/*$('#name').val(data['name']);
 				$('#phone').val(data['phone']);
@@ -136,6 +138,39 @@ function login(){
 			} else {
 				alert(data['message']);
 			}
+		}
+	});
+}
+
+/**
+ * Показати/заховати форму реєстрації
+ */
+function showRegisterBox(){
+	$('#registerBoxHidden').slideToggle("slow");
+}
+
+/**
+ * Оновлення даних користувача
+ *
+ */
+function updateUserData(){
+	//console.log("js - updateUserData");
+	var postData = getData('#updateUserData');
+
+	$.ajax({
+		type: 'POST',
+		async: true,
+		url: "/user/update/",
+		data: postData,
+		dataType: 'json',
+		success: function(data){
+			if(data['success']){
+				$('#displayName').html(data['displayName']);
+				alert(data['message']);
+			} else {
+				alert(data['message']);
+			}
+			location.reload();
 		}
 	});
 }
