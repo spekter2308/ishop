@@ -249,6 +249,10 @@ input {
 #centerColumn {
   grid-area: centerColumn;
 }
+#centerColumn .title,
+#centerColumn h4 {
+  text-align: center;
+}
 #centerColumn .prod-wrap {
   text-align: center;
 }
@@ -288,10 +292,6 @@ input {
 #centerColumn .categoryName li a:hover {
   color: lightseagreen;
 }
-#centerColumn .title {
-  width: 600px;
-  text-align: center;
-}
 #centerColumn .ordersData {
   display: block;
   text-align: center;
@@ -305,6 +305,8 @@ input {
   font-size: 18px;
 }
 #centerColumn .cartOrdersInfo {
+  max-width: 900px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 2fr auto;
   grid-template-areas: "left center right";
@@ -377,10 +379,10 @@ input {
 }
 #centerColumn .orderData {
   display: flex;
-  width: 600px;
-  margin-top: 5px;
+  max-width: 900px;
+  margin: 5px auto 0;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #centerColumn .orderData li {
   padding-top: 20px;
@@ -394,6 +396,7 @@ input {
 }
 #centerColumn .orderUserInfoBox {
   width: 400px;
+  margin: 0 auto;
 }
 #centerColumn .orderUserInfoBox h2 {
   text-align: center;
@@ -417,42 +420,23 @@ input {
   color: #111111;
   box-shadow: none;
 }
-#centerColumn .userData-hidden {
-  display: none;
-}
-#centerColumn .userData-head i {
-  display: block;
-  color: white;
-  border-radius: 4px;
-  text-align: center;
-}
-#centerColumn .userData-head i:hover {
-  opacity: .1;
-  background: white;
-  box-shadow: 0 0 8px #111111;
-}
-#centerColumn .userData-head.hideme i {
-  display: none;
-}
-#centerColumn .userData-head,
-#centerColumn .userData-body {
+#centerColumn .userData {
+  width: 700px;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
-#centerColumn .userData-head .inputBox,
-#centerColumn .userData-body .inputBox {
+#centerColumn .userData .inputBox {
   display: flex;
   height: 30px;
   font-size: 16px;
   margin: 10px;
 }
-#centerColumn .userData-head .inputBox .labelText,
-#centerColumn .userData-body .inputBox .labelText {
+#centerColumn .userData .inputBox .labelText {
   width: 250px;
   text-align: center;
 }
-#centerColumn .userData-head .inputBox input,
-#centerColumn .userData-body .inputBox input {
+#centerColumn .userData .inputBox input {
   width: 100%;
   margin-right: 20px;
 }
@@ -545,7 +529,7 @@ input {
 #centerColumn .userOrders {
   width: 700px;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 #centerColumn .userOrders li {
   list-style: none;
@@ -626,6 +610,9 @@ input {
 }
 #centerColumn .userOrders .userOrderInfo .orderInfo-right {
   grid-area: right;
+  border-radius: 10px;
+  border-left: 1px solid #fff;
+  padding-left: 8px;
 }
 #centerColumn .userOrders .userOrderInfo .orderInfo-bottom {
   grid-area: bottom;

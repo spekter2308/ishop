@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-11-27 15:06:15
+/* Smarty version 3.1.33, created on 2018-11-29 21:53:22
   from 'C:\OSPanel\domains\ishop.local\views\default\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bfd33371f1796_47066496',
+  'unifunc' => 'content_5c0035a2034c45_37192180',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f32622dc4c7cfe7f116a1ba8bed8695bb52a80fc' => 
     array (
       0 => 'C:\\OSPanel\\domains\\ishop.local\\views\\default\\order.tpl',
-      1 => 1543320374,
+      1 => 1543517558,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bfd33371f1796_47066496 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c0035a2034c45_37192180 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h3 class="title"><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </h3>
 <h4>Дані замовлення</h4>

@@ -1,40 +1,36 @@
 
 <div id="updateUserData">
 	<h3 class="pageTitle">{$pageTitle}</h3>
-	<div class="userData-head">
+	<div class="userData">
 		<div class="inputBox">
 			<div class="labelText">Логін (email):</div>
 			<input disabled class="userInput" value="{$arUser['email']}">
 		</div>
-		<i class="fa fa-chevron-down"></i>
-	</div>
-	<div class="userData-hidden">
-		<div class="userData-body">
-			<div class="inputBox">
-				<div class="labelText">Ім'я:</div>
-				<input type="text" id="newName" name="newName" class="userInput" value="{$arUser['name']}">
-			</div>
-			<div class="inputBox">
-				<div class="labelText">Телефон:</div>
-				<input type="text" id="newPhone" name="newPhone" value="{$arUser['phone']}"
-					   pattern="\d+">
-			</div>
-			<div class="inputBox">
-				<div class="labelText">Адреса:</div>
-				<input type="text" id="newAdress" name="newAdress" value="{$arUser['address']}">
-			</div>
-			<div class="inputBox">
-				<div class="labelText">Новий пароль:</div>
-				<input type="password" id="newPwd1" name="newPwd1" value="">
-			</div>
-			<div class="inputBox">
-				<div class="labelText">Повтор нового паролю:</div>
-				<input type="password" id="newPwd2" name="newPwd2" value="">
-			</div>
-			<div class="inputBox">
-				<div class="labelText">Старий(нинішній) пароль:</div>
-				<input type="password" id="curPwd" name="curPwd" value="">
-			</div>
+
+		<div class="inputBox">
+			<div class="labelText">Ім'я:</div>
+			<input type="text" id="newName" name="newName" class="userInput" value="{$arUser['name']}">
+		</div>
+		<div class="inputBox">
+			<div class="labelText">Телефон:</div>
+			<input type="text" id="newPhone" name="newPhone" value="{$arUser['phone']}"
+				   pattern="\d+">
+		</div>
+		<div class="inputBox">
+			<div class="labelText">Адреса:</div>
+			<input type="text" id="newAdress" name="newAdress" value="{$arUser['address']}">
+		</div>
+		<div class="inputBox">
+			<div class="labelText">Новий пароль:</div>
+			<input type="password" id="newPwd1" name="newPwd1" value="">
+		</div>
+		<div class="inputBox">
+			<div class="labelText">Повтор нового паролю:</div>
+			<input type="password" id="newPwd2" name="newPwd2" value="">
+		</div>
+		<div class="inputBox">
+			<div class="labelText">Старий(нинішній) пароль:</div>
+			<input type="password" id="curPwd" name="curPwd" value="">
 		</div>
 		<input type="button" value="Зберегти зміни" class="button" onclick="updateUserData();">
 	</div>
@@ -80,12 +76,9 @@
 							{/foreach}
 						</div>
 						<div class="orderInfo-right">
-							<h4>Статус замовлення</h4>
-							{if $item['status'] == 1}
-								<div class="orderStatus-green"><span>Оплачено</span></div>
-							{else}
-								<div class="orderStatus-red"><span>Не оплачено</span></div>
-							{/if}
+							<h4>Додаткова інформація</h4>
+								<div class="additionalInfo">
+									<span>{$item['comment']}</span></div>
 						</div>
 						<div class="orderInfo-bottom">
 							<p>Всього до оплати</p>
@@ -101,12 +94,6 @@
 		$(document).ready(function(){
 			$('.userOrder').click(function(){
 				$(this).toggleClass('in').next().slideToggle();
-			});
-		});
-		$(document).ready(function(){
-			$('.userData-head').click(function(){
-				$(this).toggleClass('hideme').next().slideToggle();
-				$('.userData-head').not(this).removeClass('hideme').next().slideUp();
 			});
 		});
 	</script>

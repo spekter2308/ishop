@@ -205,6 +205,9 @@ input {
 #centerColumn{
 	grid-area: centerColumn;
 
+	.title, h4{
+		text-align: center;
+	}
 	.prod-wrap{
 		text-align: center;
 	}
@@ -248,10 +251,6 @@ input {
 		}
 	}
 
-	.title {
-		width: 600px;
-		text-align: center;
-	}
 	.ordersData{
 		display: block;
 		text-align: center;
@@ -265,6 +264,8 @@ input {
 		}
 	}
 	.cartOrdersInfo{
+		max-width: 900px;
+		margin: 0 auto;
 		display: grid;
 		grid-template-columns: 1fr 2fr auto;
 		grid-template-areas: "left center right";
@@ -338,12 +339,13 @@ input {
 		}
 	}
 
+
 	.orderData{
 		display: flex;
-		width: 600px;
-		margin-top: 5px;
+		max-width: 900px;
+		margin: 5px auto 0;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: space-around;
 		li{
 			padding-top: 20px;
 			list-style: none;
@@ -357,6 +359,7 @@ input {
 	}
 	.orderUserInfoBox{
 		width: 400px;
+		margin: 0 auto;
 		h2{
 			text-align: center;
 		}
@@ -376,31 +379,12 @@ input {
 			}
 		}
 	}
-	.userData-hidden{
-		display: none;
-	}
-	.userData-head{
-		i{
-			display: block;
-			color: white;
-			border-radius: 4px;
-			text-align: center;
-			&:hover{
-				opacity: .1;
-				background: white;
-				box-shadow: 0 0 8px #111111;
-			}
-		}
-		&.hideme{
-			i{
-				display: none;
-			}
-		}
-	}
 
-	.userData-head, .userData-body{
+	.userData{
+		width: 700px;
 		display: flex;
 		flex-direction: column;
+		margin: 0 auto;
 		.inputBox{
 			display: flex;
 			height: 30px;
@@ -500,7 +484,7 @@ input {
 	.userOrders{
 		width: 700px;
 		margin: 0 auto;
-		margin-top: 80px;
+		margin-top: 40px;
 		li{
 			list-style: none;
 		}
@@ -586,6 +570,9 @@ input {
 			}
 			.orderInfo-right{
 				grid-area: right;
+				border-radius: 10px;
+				border-left: 1px solid #fff;
+				padding-left: 8px;
 			}
 			.orderInfo-bottom{
 				grid-area: bottom;
