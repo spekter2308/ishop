@@ -162,3 +162,15 @@ function updateUserData($name, $phone, $address, $pwd1, $pwd2, $curPwd){
 
 	return $rs;
 }
+
+/**
+ * Отримати дані змовлень нинішнього користувача
+ *
+ * @return array масив замовлень з прив'язкою до продуктів
+ */
+function getCurUserOrders(){
+	$userId = isset($_SESSION['user']['id']) ? $_SESSION['user']['id'] : null;
+	$rs = getOrdersWithProductsByUser($userId);
+
+	return $rs;
+}

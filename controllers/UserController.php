@@ -8,6 +8,8 @@
 //підключаємо моделі
 include_once '../models/CategoriesModel.php';
 include_once '../models/UsersModel.php';
+include_once '../models/OrdersModel.php';
+include_once '../models/PurchaseModel.php';
 
 /**
  * AJAX реєстрація користувача
@@ -118,14 +120,17 @@ function indexAction($smarty){
 	if(!isset($_SESSION['user'])){
 		redirect('/');
 	}
+
+	//отримання списку категорій для меню
 	$rsCategories = getAllMainCatsWithChildren();
 
-	//$userId =$_SESSION['user']['id'];
-	//$rsUser = getUserData($userId);
+	//отримання списку замовлень користувача з товарами
+	$rsUserOrders = getCurUserOrders();
+	//d($rsUserOrders, 1);
 
-	$smarty->assign('pageTitle', 'Ваші реєстраційні дані');
+	$smarty->assign('pageTitle', 'Особисті дані');
 	$smarty->assign('rsCategories', $rsCategories);
-	//$smarty->assign('rsUser', $rsUser);
+	$smarty->assign('rsUserOrders', $rsUserOrders);
 
 	loadTemplate($smarty, 'header');
 	loadTemplate($smarty, 'user');

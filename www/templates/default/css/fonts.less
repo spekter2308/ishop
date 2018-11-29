@@ -1,0 +1,19 @@
+.font-face(@family, @fileName, @weight: normal, @style: normal) {
+	@font-face {
+		font-family: '@{family}';
+		src: url('../fonts/@{fileName}/@{fileName}.eot');
+		src: url('../fonts/@{fileName}/@{fileName}.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/@{fileName}/@{fileName}.woff') format('woff'),
+		url('../fonts/@{fileName}/@{fileName}.ttf') format('truetype');
+		font-weight: @weight;
+		font-style: @style;
+	}
+}
+
+.font-face(raleway, RalewayRegular);
+.font-face(raleway, RalewayBold, bold);
+.font-face(raleway, RalewayExtraBold, 800);
+.font-face(raleway, RalewayLight, 300);
+.font-face(raleway, RalewaySemiBold, 600);
+.font-face(raleway, RalewayThin, 100);
+.font-face(firasans, fira-sans-regular);

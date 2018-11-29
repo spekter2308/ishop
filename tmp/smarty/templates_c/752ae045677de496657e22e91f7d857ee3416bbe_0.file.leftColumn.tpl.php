@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-11-13 15:47:02
+/* Smarty version 3.1.33, created on 2018-11-23 21:44:44
   from 'C:\OSPanel\domains\ishop.local\views\default\leftColumn.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5beac7c63a0123_38716831',
+  'unifunc' => 'content_5bf84a9ca544a4_69438823',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '752ae045677de496657e22e91f7d857ee3416bbe' => 
     array (
       0 => 'C:\\OSPanel\\domains\\ishop.local\\views\\default\\leftColumn.tpl',
-      1 => 1542113222,
+      1 => 1542998682,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5beac7c63a0123_38716831 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bf84a9ca544a4_69438823 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="leftColumn">
 
 	<div class="leftMenu">
@@ -71,38 +71,41 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			<a href="/user/logout/">Выход</a>
 		</div><br>
 
-		<div id="loginBox">
-		<div class="dws-input">
-			<div class="menuCaption">Авторизація</div>
-			<div class="email input">
-				<input type="email" id="loginEmail" name="loginEmail" placeholder="Email">
-			</div>
-			<div class="password input">
-				<input type="password" id="loginPwd" name="loginPwd" placeholder="Пароль">
-			</div>
-			<div class="loginBtn">
-				<input type="button" onclick="login();" value="Увійти">
+		<?php if (!isset($_smarty_tpl->tpl_vars['hideLoginBox']->value)) {?>
+				<div id="loginBox">
+			<div class="dws-input">
+				<div class="menuCaption">Авторизація</div>
+				<div class="email input">
+					<input type="email" id="loginEmail" name="loginEmail" placeholder="Email">
+				</div>
+				<div class="password input">
+					<input type="password" id="loginPwd" name="loginPwd" placeholder="Пароль">
+				</div>
+				<div class="loginBtn">
+					<input type="button" onclick="login();" value="Увійти">
+				</div>
 			</div>
 		</div>
-	</div>
 
-		<div id="registerBox">
-		<div class="menuCaption showHidden" onclick="showRegisterBox();">
-			Реєстрація
+				<div id="registerBox">
+			<div class="menuCaption showHidden" onclick="showRegisterBox();">
+				Реєстрація
+			</div>
+			<div id="registerBoxHidden">
+								<div class="email input">
+						<input type="email" id="email" name="email" placeholder="email:">
+					</div>
+					<div class="password input">
+						<input type="password" id="pwd1" name="pwd1" placeholder="пароль">
+					</div>
+					<div class="password input">
+						<input type="password" id="pwd2" name="pwd2" placeholder="повторіть пароль">
+					</div>
+					<input type="button" onclick="registerNewUser();" value="Зареєструватись">
+			</div>
 		</div>
-		<div id="registerBoxHidden">
-						<div class="email input">
-					<input type="email" id="email" name="email" placeholder="email:">
-				</div>
-				<div class="password input">
-					<input type="password" id="pwd1" name="pwd1" placeholder="пароль">
-				</div>
-				<div class="password input">
-					<input type="password" id="pwd2" name="pwd2" placeholder="повторіть пароль">
-				</div>
-				<input type="button" onclick="registerNewUser();" value="Зареєструватись">
-		</div>
-	</div>
+		<?php }?>
+
 	<?php }?>
 
 

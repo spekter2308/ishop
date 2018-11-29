@@ -30,41 +30,44 @@
 			<a href="/user/logout/">Выход</a>
 		</div><br>
 
-	{*Login form*}
-	<div id="loginBox">
-		<div class="dws-input">
-			<div class="menuCaption">Авторизація</div>
-			<div class="email input">
-				<input type="email" id="loginEmail" name="loginEmail" placeholder="Email">
-			</div>
-			<div class="password input">
-				<input type="password" id="loginPwd" name="loginPwd" placeholder="Пароль">
-			</div>
-			<div class="loginBtn">
-				<input type="button" onclick="login();" value="Увійти">
-			</div>
-		</div>
-	</div>
-
-	{*Register form*}
-	<div id="registerBox">
-		<div class="menuCaption showHidden" onclick="showRegisterBox();">
-			Реєстрація
-		</div>
-		<div id="registerBoxHidden">
-		{*<img src="../images/register/men.png" alt="">*}
+		{if !isset($hideLoginBox)}
+		{*Login form*}
+		<div id="loginBox">
+			<div class="dws-input">
+				<div class="menuCaption">Авторизація</div>
 				<div class="email input">
-					<input type="email" id="email" name="email" placeholder="email:">
+					<input type="email" id="loginEmail" name="loginEmail" placeholder="Email">
 				</div>
 				<div class="password input">
-					<input type="password" id="pwd1" name="pwd1" placeholder="пароль">
+					<input type="password" id="loginPwd" name="loginPwd" placeholder="Пароль">
 				</div>
-				<div class="password input">
-					<input type="password" id="pwd2" name="pwd2" placeholder="повторіть пароль">
+				<div class="loginBtn">
+					<input type="button" onclick="login();" value="Увійти">
 				</div>
-				<input type="button" onclick="registerNewUser();" value="Зареєструватись">
+			</div>
 		</div>
-	</div>
+
+		{*Register form*}
+		<div id="registerBox">
+			<div class="menuCaption showHidden" onclick="showRegisterBox();">
+				Реєстрація
+			</div>
+			<div id="registerBoxHidden">
+			{*<img src="../images/register/men.png" alt="">*}
+					<div class="email input">
+						<input type="email" id="email" name="email" placeholder="email:">
+					</div>
+					<div class="password input">
+						<input type="password" id="pwd1" name="pwd1" placeholder="пароль">
+					</div>
+					<div class="password input">
+						<input type="password" id="pwd2" name="pwd2" placeholder="повторіть пароль">
+					</div>
+					<input type="button" onclick="registerNewUser();" value="Зареєструватись">
+			</div>
+		</div>
+		{/if}
+
 	{/if}
 
 

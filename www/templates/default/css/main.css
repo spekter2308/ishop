@@ -1,4 +1,54 @@
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/RalewayRegular/RalewayRegular.eot');
+  src: url('../fonts/RalewayRegular/RalewayRegular.eot?#iefix') format('embedded-opentype'), url('../fonts/RalewayRegular/RalewayRegular.woff') format('woff'), url('../fonts/RalewayRegular/RalewayRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/RalewayBold/RalewayBold.eot');
+  src: url('../fonts/RalewayBold/RalewayBold.eot?#iefix') format('embedded-opentype'), url('../fonts/RalewayBold/RalewayBold.woff') format('woff'), url('../fonts/RalewayBold/RalewayBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/RalewayExtraBold/RalewayExtraBold.eot');
+  src: url('../fonts/RalewayExtraBold/RalewayExtraBold.eot?#iefix') format('embedded-opentype'), url('../fonts/RalewayExtraBold/RalewayExtraBold.woff') format('woff'), url('../fonts/RalewayExtraBold/RalewayExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/RalewayLight/RalewayLight.eot');
+  src: url('../fonts/RalewayLight/RalewayLight.eot?#iefix') format('embedded-opentype'), url('../fonts/RalewayLight/RalewayLight.woff') format('woff'), url('../fonts/RalewayLight/RalewayLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/RalewaySemiBold/RalewaySemiBold.eot');
+  src: url('../fonts/RalewaySemiBold/RalewaySemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/RalewaySemiBold/RalewaySemiBold.woff') format('woff'), url('../fonts/RalewaySemiBold/RalewaySemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/RalewayThin/RalewayThin.eot');
+  src: url('../fonts/RalewayThin/RalewayThin.eot?#iefix') format('embedded-opentype'), url('../fonts/RalewayThin/RalewayThin.woff') format('woff'), url('../fonts/RalewayThin/RalewayThin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'firasans';
+  src: url('../fonts/fira-sans-regular/fira-sans-regular.eot');
+  src: url('../fonts/fira-sans-regular/fira-sans-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/fira-sans-regular/fira-sans-regular.woff') format('woff'), url('../fonts/fira-sans-regular/fira-sans-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
+  font-family: "raleway", sans-serif;
   padding: 0;
   margin: 0;
   background: wheat;
@@ -15,6 +65,8 @@ body {
   display: none;
 }
 input {
+  font-family: "raleway", sans-serif;
+  font-weight: 600;
   opacity: .6;
   color: grey;
   text-align: center;
@@ -236,6 +288,10 @@ input {
 #centerColumn .categoryName li a:hover {
   color: lightseagreen;
 }
+#centerColumn .title {
+  width: 600px;
+  text-align: center;
+}
 #centerColumn .ordersData {
   display: block;
   text-align: center;
@@ -248,50 +304,155 @@ input {
 #centerColumn .ordersData h4 {
   font-size: 18px;
 }
-#centerColumn .cartOrdersHead {
-  margin-top: -15px;
-  display: grid;
-  grid-template-columns: 0.6fr 1.4fr 1.2fr 0.8fr 1fr 1fr;
-  text-align: center;
-}
-#centerColumn .cartOrdersHead h5 {
-  flex-wrap: wrap;
-}
 #centerColumn .cartOrdersInfo {
   display: grid;
-  grid-template-columns: 0.6fr 1.4fr 1.2fr 0.8fr 1fr 1fr;
-  text-align: center;
-}
-#centerColumn .cartOrdersInfo .prodName {
-  display: flex;
-  justify-content: start;
+  grid-template-columns: 1fr 2fr auto;
+  grid-template-areas: "left center right";
+  border-bottom: 1px dotted black;
 }
 #centerColumn .cartOrdersInfo li {
   list-style: none;
-  flex-wrap: nowrap;
 }
 #centerColumn .cartOrdersInfo li a {
   text-decoration: none;
-  color: black;
+  color: #3e77aa;
 }
-#centerColumn .cartOrdersInfo li a:hover {
-  color: blueviolet;
+#centerColumn .cartOrdersInfo .cart-img {
+  grid-area: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-#centerColumn .userData {
+#centerColumn .cartOrdersInfo .cart-img li {
+  margin: 5px;
+  font-size: 18px;
+}
+#centerColumn .cartOrdersInfo .cart-img li img {
+  height: 80px;
+  width: 80px;
+}
+#centerColumn .cartOrdersInfo .cart-title {
+  grid-area: center;
   display: flex;
   flex-direction: column;
 }
-#centerColumn .userData .inputBox {
+#centerColumn .cartOrdersInfo .cart-title li {
+  display: flex;
+  margin: 20px 40px 0 0;
+  justify-content: space-between;
+}
+#centerColumn .cartOrdersInfo .cart-title li input {
+  width: 50px;
+}
+#centerColumn .cartOrdersInfo .cart-sum {
+  grid-area: right;
+  margin-right: 10px;
+  text-align: center;
+}
+#centerColumn form input[type="submit"],
+#centerColumn form input[type="button"] {
+  text-align: center;
+  display: block;
+  margin: 25px auto;
+  padding: 13px 30px;
+  font-size: 16px;
+  background: #fff;
+  color: #2c536c;
+  border: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(125, 125, 125, 0.8);
+}
+#centerColumn form input[type="submit"]:hover,
+#centerColumn form input[type="button"]:hover {
+  border-bottom: 3px solid #7db2c3;
+  box-shadow: none;
+  transition: all .5s;
+  background: blue;
+  color: #eee;
+}
+#centerColumn form span {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+#centerColumn .orderData {
+  display: flex;
+  width: 600px;
+  margin-top: 5px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#centerColumn .orderData li {
+  padding-top: 20px;
+  list-style: none;
+}
+#centerColumn .orderData li a {
+  text-decoration: none;
+}
+#centerColumn .orderData li:first-child {
+  padding: 0;
+}
+#centerColumn .orderUserInfoBox {
+  width: 400px;
+}
+#centerColumn .orderUserInfoBox h2 {
+  text-align: center;
+}
+#centerColumn .orderUserInfoBox .customerName,
+#centerColumn .orderUserInfoBox .customerPhone,
+#centerColumn .orderUserInfoBox .customerAddress {
+  margin-top: 20px;
+  font-size: 16px;
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+}
+#centerColumn .orderUserInfoBox .customerName input,
+#centerColumn .orderUserInfoBox .customerPhone input,
+#centerColumn .orderUserInfoBox .customerAddress input {
+  width: 200px;
+  border-radius: 5px;
+  height: 22px;
+  line-height: 22px;
+  color: #111111;
+  box-shadow: none;
+}
+#centerColumn .userData-hidden {
+  display: none;
+}
+#centerColumn .userData-head i {
+  display: block;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+#centerColumn .userData-head i:hover {
+  opacity: .1;
+  background: white;
+  box-shadow: 0 0 8px #111111;
+}
+#centerColumn .userData-head.hideme i {
+  display: none;
+}
+#centerColumn .userData-head,
+#centerColumn .userData-body {
+  display: flex;
+  flex-direction: column;
+}
+#centerColumn .userData-head .inputBox,
+#centerColumn .userData-body .inputBox {
   display: flex;
   height: 30px;
   font-size: 16px;
   margin: 10px;
 }
-#centerColumn .userData .inputBox .labelText {
+#centerColumn .userData-head .inputBox .labelText,
+#centerColumn .userData-body .inputBox .labelText {
   width: 250px;
   text-align: center;
 }
-#centerColumn .userData .inputBox input {
+#centerColumn .userData-head .inputBox input,
+#centerColumn .userData-body .inputBox input {
   width: 100%;
   margin-right: 20px;
 }
@@ -321,6 +482,162 @@ input {
   border: none;
   bottom: -7px;
   box-shadow: none;
+}
+#centerColumn #registerBox {
+  width: 500px;
+}
+#centerColumn #registerBox h3 {
+  text-align: center;
+}
+#centerColumn #registerBox .email,
+#centerColumn #registerBox .name,
+#centerColumn #registerBox .password,
+#centerColumn #registerBox .address,
+#centerColumn #registerBox .phone {
+  margin-top: 20px;
+  font-size: 16px;
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+}
+#centerColumn #registerBox .email input,
+#centerColumn #registerBox .name input,
+#centerColumn #registerBox .password input,
+#centerColumn #registerBox .address input,
+#centerColumn #registerBox .phone input {
+  width: 200px;
+  border-radius: 5px;
+  height: 22px;
+  line-height: 22px;
+  color: #111111;
+  box-shadow: none;
+}
+#centerColumn #loginBox {
+  width: 500px;
+}
+#centerColumn #loginBox h3 {
+  text-align: center;
+}
+#centerColumn #loginBox .email,
+#centerColumn #loginBox .password {
+  margin-top: 20px;
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+}
+#centerColumn #loginBox .email input,
+#centerColumn #loginBox .password input {
+  width: 200px;
+  border-radius: 5px;
+  height: 22px;
+  line-height: 22px;
+  color: #111111;
+  box-shadow: none;
+}
+#centerColumn .orderStatus-red {
+  font-family: "firasans", sans-serif;
+  color: red;
+}
+#centerColumn .orderStatus-green {
+  font-family: "firasans", sans-serif;
+  color: green;
+}
+#centerColumn .userOrders {
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+#centerColumn .userOrders li {
+  list-style: none;
+}
+#centerColumn .userOrders h3 {
+  text-align: center;
+}
+#centerColumn .userOrders .userOrderInfo-hidden {
+  display: none;
+}
+#centerColumn .userOrders .userOrder {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 5px 10px;
+  height: 50px;
+  line-height: 60px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+#centerColumn .userOrders .userOrder:before {
+  font-family: fontawesome;
+  content: '\f078';
+  position: relative;
+  left: 15px;
+  bottom: 2px;
+  font-size: 12px;
+  color: #111;
+  transition: all .4s;
+}
+#centerColumn .userOrders .userOrder.in:before {
+  transform: rotate(180deg);
+  position: relative;
+  left: 15px;
+  bottom: -4px;
+  transition: all .4s;
+}
+#centerColumn .userOrders .userOrder img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+#centerColumn .userOrders .userOrder:hover {
+  box-shadow: 0 0 14px black;
+}
+#centerColumn .userOrders .userOrderInfo {
+  display: grid;
+  grid-template-columns: 2fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "left right" "bottom right";
+}
+#centerColumn .userOrders .userOrderInfo .userOrderInfo-left {
+  grid-area: left;
+}
+#centerColumn .userOrders .userOrderInfo .userOrderInfo-left .orderInfo-left {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "img name name" "img price real-price";
+}
+#centerColumn .userOrders .userOrderInfo .userOrderInfo-left .orderInfo-left .prodImg {
+  grid-area: img;
+}
+#centerColumn .userOrders .userOrderInfo .userOrderInfo-left .orderInfo-left .prodName {
+  grid-area: name;
+  margin-left: 40px;
+}
+#centerColumn .userOrders .userOrderInfo .userOrderInfo-left .orderInfo-left .prodPrice {
+  grid-area: price;
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#centerColumn .userOrders .userOrderInfo .userOrderInfo-left .orderInfo-left .summaryInfo {
+  grid-area: real-price;
+  margin-right: 20px;
+}
+#centerColumn .userOrders .userOrderInfo .orderInfo-right {
+  grid-area: right;
+}
+#centerColumn .userOrders .userOrderInfo .orderInfo-bottom {
+  grid-area: bottom;
+  display: flex;
+  justify-content: space-between;
+}
+#centerColumn .userOrders .userOrderInfo .orderInfo-bottom p:first-child {
+  font-weight: bold;
+}
+#centerColumn .userOrders .userOrderInfo .orderInfo-bottom p:last-child {
+  font-weight: 800;
+  font-style: italic;
 }
 #footer {
   grid-area: footer;
