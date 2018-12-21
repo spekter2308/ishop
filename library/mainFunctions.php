@@ -67,3 +67,19 @@ function redirect($url){
 	header("Location: $url");
 	exit;
 }
+
+/**
+ * Перевірка на пустоту строки
+ *
+ * @param string $str строка
+ * @return bool результат (true якщо пуста | false якщо не пуста)
+ */
+function checkEmptyString($str){
+	$str = trim($str);
+
+	if(!isset($str) OR $str === ''){
+		return true;
+	} else {
+		return false;
+	}
+}

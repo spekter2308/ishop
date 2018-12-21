@@ -45,7 +45,7 @@ function createNewOrder($name, $phone, $address){
  * Отримати дані всіх замовлень з прив'язкою до товарів по id користувача
  *
  * @param $userId - ID користувача
- * @return array - масив замовлень з прив'язкою до продуктів
+ * @return array - масив замовлень з прив'язкою продуктів
  */
 function getOrdersWithProductsByUser($userId){
 	global $db;
@@ -69,4 +69,49 @@ function getOrdersWithProductsByUser($userId){
 	}
 
 	return $smartyRs;
+}
+
+/**
+ * Отримання всіх замовлень для кожного користувача
+ *
+ * @return array - масив користувачів із замовленнями кожного
+ */
+function getOrders(){
+	global $db;
+
+	$sql = "SELECT o.*, u.name, u.email, u.phone, u.address FROM orders AS `o` LEFT JOIN users AS `u` ON o.user_id = u.id 
+ORDER BY id DESC";
+	$rs = mysqli_query($db, $sql);
+
+	$smartyRs = array();
+	while($row = mysqli_fetch_assoc($rs)){
+		$rsChildren = getPurcaseForOrders($row['id']);
+
+		if($rsChildren){
+			$row['children'] = $rsChildren;
+			foreach ($rsChildren as $child){
+				$row['count'] += $child['amount'];
+				$row['summary'] += $child['amount'] * $child['price'];
+			}
+			$smartyRs[] = $row;
+		}
+	}
+	return $smartyRs;
+}
+
+/**
+ * Оновлення дати та статусу оплати для замовлень
+ *
+ * @param $itemId ID замовлення
+ * @param $itemDatePayment дата оплати замовлення
+ * @param $itemStatus статус оплати замовлення
+ * @return bool результат виконання запиту
+ */
+function updateDatePayment($itemId, $itemDatePayment, $itemStatus){
+	global $db;
+
+	$sql = "UPDATE orders SET `date_payment` = '{$itemDatePayment}', `status` = '{$itemStatus}' WHERE `id` = $itemId";
+
+	$rs = mysqli_query($db, $sql);
+	return $rs;
 }

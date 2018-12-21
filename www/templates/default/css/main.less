@@ -32,7 +32,25 @@ input {
 	grid-area: header;
 	display: flex;
 	justify-content: center;
-	margin: 0;
+	margin: 0 0 0 250px;
+	.mainPage{
+		display: block;
+		position: absolute;
+		top: 5px;
+		left: 10px;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: midnightblue;
+		font-size: 18px;
+		font-weight: 800;
+		padding: 15px;
+		box-shadow: 0 0 1px rgba(0,0,0, .5);
+		margin: 20px 25px;
+		&:hover{
+			box-shadow: 0 0 3px rgba(0,0,0, .9);
+			transition: all .5s;
+		}
+	}
 }
 #leftColumn {
 	grid-area: leftColumn;
@@ -210,6 +228,10 @@ input {
 	}
 	.prod-wrap{
 		text-align: center;
+		img{
+			height: 150px;
+			width: 150px;
+		}
 	}
 	.categoryProducts{
 		display: grid;
@@ -230,6 +252,10 @@ input {
 			padding: 10px;
 			text-decoration: none;
 			text-transform: uppercase;
+			img{
+				height: 100px;
+				width: 100px;
+			}
 		}
 	}
 	.pageTitle {
@@ -431,6 +457,7 @@ input {
 
 	#registerBox{
 		width: 500px;
+		margin: 0 auto;
 		h3{
 			text-align: center;
 		}
@@ -452,6 +479,7 @@ input {
 	}
 	#loginBox{
 		width: 500px;
+		margin: 0 auto;
 		h3{
 			text-align: center;
 		}
@@ -551,6 +579,12 @@ input {
 										 "img price real-price";
 					.prodImg{
 						grid-area: img;
+						max-width: 150px;
+						max-height: 150px;
+						img{
+							max-width: 150px;
+							max-height: 150px;
+						}
 					}
 					.prodName{
 						grid-area: name;
@@ -596,4 +630,3 @@ input {
 	justify-content: center;
 	background: darkgray;
 }
-

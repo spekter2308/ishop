@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-11-04 17:08:15
+/* Smarty version 3.1.33, created on 2018-12-10 21:01:49
   from 'C:\OSPanel\domains\ishop.local\views\default\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bdefd4f2c7297_57671067',
+  'unifunc' => 'content_5c0eaa0d0c2b12_88253355',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4e6f12783a385543ce104a34dbc7dd5833adab44' => 
     array (
       0 => 'C:\\OSPanel\\domains\\ishop.local\\views\\default\\header.tpl',
-      1 => 1541340494,
+      1 => 1544464909,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:leftColumn.tpl' => 1,
   ),
 ),false)) {
-function content_5bdefd4f2c7297_57671067 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c0eaa0d0c2b12_88253355 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -44,6 +44,7 @@ css/node_modules/font-awesome/css/font-awesome.css" type="text/css">
 </head>
 <body>
 <div id="header">
+	<a href="/" class="mainPage">Головна</a>
 	<h1>Internet shop</h1>
 </div>
 

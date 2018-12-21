@@ -75,7 +75,25 @@ input {
   grid-area: header;
   display: flex;
   justify-content: center;
-  margin: 0;
+  margin: 0 0 0 250px;
+}
+#header .mainPage {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: midnightblue;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 15px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  margin: 20px 25px;
+}
+#header .mainPage:hover {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+  transition: all .5s;
 }
 #leftColumn {
   grid-area: leftColumn;
@@ -256,6 +274,10 @@ input {
 #centerColumn .prod-wrap {
   text-align: center;
 }
+#centerColumn .prod-wrap img {
+  height: 150px;
+  width: 150px;
+}
 #centerColumn .categoryProducts {
   display: grid;
   grid-gap: 10px;
@@ -273,6 +295,10 @@ input {
   padding: 10px;
   text-decoration: none;
   text-transform: uppercase;
+}
+#centerColumn .products a img {
+  height: 100px;
+  width: 100px;
 }
 #centerColumn .pageTitle {
   display: block;
@@ -469,6 +495,7 @@ input {
 }
 #centerColumn #registerBox {
   width: 500px;
+  margin: 0 auto;
 }
 #centerColumn #registerBox h3 {
   text-align: center;
@@ -498,6 +525,7 @@ input {
 }
 #centerColumn #loginBox {
   width: 500px;
+  margin: 0 auto;
 }
 #centerColumn #loginBox h3 {
   text-align: center;
@@ -593,6 +621,12 @@ input {
 }
 #centerColumn .userOrders .userOrderInfo .userOrderInfo-left .orderInfo-left .prodImg {
   grid-area: img;
+  max-width: 150px;
+  max-height: 150px;
+}
+#centerColumn .userOrders .userOrderInfo .userOrderInfo-left .orderInfo-left .prodImg img {
+  max-width: 150px;
+  max-height: 150px;
 }
 #centerColumn .userOrders .userOrderInfo .userOrderInfo-left .orderInfo-left .prodName {
   grid-area: name;

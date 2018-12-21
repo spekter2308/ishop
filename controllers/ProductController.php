@@ -39,3 +39,4 @@ function indexAction($smarty){
 	loadTemplate($smarty, 'product');
 	loadTemplate($smarty, 'footer');
 }
+

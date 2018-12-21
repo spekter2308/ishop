@@ -197,11 +197,3 @@ function saveOrder(){
 		}
 	});
 }
-
-/**
- * Показ прихованих нижче даних
- *
- */
-function showUserInfo() {
-
-}

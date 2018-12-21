@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-11-23 21:44:44
+/* Smarty version 3.1.33, created on 2018-12-10 20:45:04
   from 'C:\OSPanel\domains\ishop.local\views\default\leftColumn.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bf84a9ca544a4_69438823',
+  'unifunc' => 'content_5c0ea6207d1808_08709888',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '752ae045677de496657e22e91f7d857ee3416bbe' => 
     array (
       0 => 'C:\\OSPanel\\domains\\ishop.local\\views\\default\\leftColumn.tpl',
-      1 => 1542998682,
+      1 => 1544463904,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bf84a9ca544a4_69438823 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c0ea6207d1808_08709888 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="leftColumn">
 
 	<div class="leftMenu">

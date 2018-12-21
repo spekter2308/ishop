@@ -31,6 +31,7 @@ function indexAction($smarty){
 	//якщо головна категорія, то показуємо дочірні категорії, інакше показуємо товар
 	if($rsCategory['parent_id'] == 0){
 		$rsChildCats = getChildrenForCat($catId);
+		$rsProducts = getProductsByCat($catId);
 	} else {
 		$rsProducts = getProductsByCat($catId);
 	}
