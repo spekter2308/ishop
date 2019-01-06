@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-12-04 03:13:46
+/* Smarty version 3.1.33, created on 2018-12-23 17:36:15
   from 'C:\OSPanel\domains\ishop.local\views\admin\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c05c6ba2398b8_08448488',
+  'unifunc' => 'content_5c1f9d5f0e7736_15391253',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b0415c81913615871489c6216d9fe8fc1faa3ff' => 
     array (
       0 => 'C:\\OSPanel\\domains\\ishop.local\\views\\admin\\admin.tpl',
-      1 => 1543882425,
+      1 => 1545575774,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c05c6ba2398b8_08448488 (Smarty_Internal_Template $_smarty_tpl) {
-?><div id="blockNewCategory">
+function content_5c1f9d5f0e7736_15391253 (Smarty_Internal_Template $_smarty_tpl) {
+if (isset($_smarty_tpl->tpl_vars['arAdmin']->value)) {?>
+
+<div id="blockNewCategory">
 	<div class="newCategory">
 		<h4>Нова категорія:</h4>
 		<input name="newCategoryName" id="newCategoryName" type="text" value="">
@@ -45,5 +47,27 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</select>
 	</div>
 	<input type="button" onclick="newCategory();" value="Додати категорію">
-</div><?php }
+</div>
+
+<?php } else { ?>
+
+		<div id="loginAdmin">
+		<div class="dws-input">
+			<div class="menuCaption">
+				<h3>Авторизація адміністратора</h3>
+			</div>
+			<div class="email input">
+				<input type="text" id="loginAdmin" name="loginAdmin" placeholder="Login">
+			</div>
+			<div class="password input">
+				<input type="password" id="loginPwd" name="loginPwd" placeholder="Пароль">
+			</div>
+			<div class="loginBtn">
+				<input type="button" onclick="loginAdmin();" value="Увійти">
+			</div>
+		</div>
+	</div>
+
+<?php }
+}
 }

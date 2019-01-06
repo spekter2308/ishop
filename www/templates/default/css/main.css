@@ -595,8 +595,8 @@ input {
   bottom: -4px;
   transition: all .4s;
 }
-#centerColumn .userOrders .userOrder img {
-  max-height: 100%;
+#centerColumn .userOrders .userOrder .listImg img {
+  max-height: 50px;
   max-width: 100%;
   height: auto;
   width: auto;
@@ -659,6 +659,18 @@ input {
 #centerColumn .userOrders .userOrderInfo .orderInfo-bottom p:last-child {
   font-weight: 800;
   font-style: italic;
+}
+#centerColumn .paginator {
+  font-size: 22px;
+  display: block;
+  width: 100px;
+  margin: 25px auto;
+  height: 30px;
+  line-height: 30px;
+}
+#centerColumn .paginator i {
+  font-size: 22px;
+  font-weight: bold;
 }
 #footer {
   grid-area: footer;

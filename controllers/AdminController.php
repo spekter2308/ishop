@@ -12,6 +12,7 @@ include_once "../models/CategoriesModel.php";
 include_once "../models/ProductsModel.php";
 include_once "../models/OrdersModel.php";
 include_once "../models/PurchaseModel.php";
+include_once "../models/AdminsModel.php";
 
 $smarty->setTemplateDir(TemplateAdminPrefix);
 $smarty->assign('TemplateAdminWebPath', TemplateAdminWebPath);
@@ -201,7 +202,7 @@ function uploadAction(){
 	//створюємо ім'я файлу
 	$newFileName = $itemId . '.' . $ext;
 
-	if($_FILES["filename"]["size"] > $maxSize){
+	if($_FILES["file"]["size"] > $maxSize){
 		echo "Розмір файла перевищує 2 мегабайти";
 		return;
 	}
@@ -217,6 +218,9 @@ function uploadAction(){
 	redirect('/admin/products/');
 }
 
+/**
+ * Сторінка керування замовленнями
+ */
 function ordersAction($smarty){
 	$rsOrders = getOrders();
 
@@ -242,10 +246,92 @@ function updatedatepaymentAction(){
 
 	if($res) {
 		$resData['success'] = true;
-		$resData['message'] = "Зміни успішно внесені";
+		$resData['message'] = "Дата і статус оновлено";
 	} else {
 		$resData['success'] = false;
 		$resData['message'] = "Помилка змін даних";
+	}
+
+	echo json_encode($resData);
+	return;
+}
+
+/**
+ * AJAX авторизація нового користувача
+ *
+ * @return json масив даних нового користувача
+ */
+function loginAction(){
+	$login = isset($_REQUEST['loginAdmin']) ? $_REQUEST['loginAdmin'] : null;
+	$login = trim($login);
+
+	$pwd = isset($_REQUEST['loginPwd']) ? $_REQUEST['loginPwd'] : null;
+	$pwd = trim($pwd);
+
+	$adminData = loginAdmin($login, $pwd);
+	$mainAdmin = checkMainAdmin($login, $pwd);
+	if($mainAdmin){
+		$_SESSION['mainAdmin'] = 1;
+	}
+
+	if($adminData['success']){
+		$adminData = $adminData[0];
+
+		$_SESSION['admin'] = $adminData;
+
+		$resData = $_SESSION['admin'];
+		$resData['success'] = true;
+	} else {
+		$resData['success'] = false;
+		$resData['message'] = "Невірний логін або пароль";
+	}
+
+	echo json_encode($resData);
+}
+
+/**
+ * Вихід з облікового запису користувача (розлогінювання)
+ */
+function logoutAction(){
+	if(isset($_SESSION['admin']) or isset($_SESSION['mainAdmin'])){
+		unset($_SESSION['admin']);
+		unset($_SESSION['mainAdmin']);
+	}
+	redirect('/admin/');
+}
+
+/**
+ * Відображення та додавання адміністраторів
+ */
+function adminsAction($smarty){
+	$rsAdmins = getAdmins();
+	$mainAdmin = isset($_SESSION['mainAdmin']) ? $_SESSION['mainAdmin'] : null;
+
+
+	$smarty->assign('rsAdmins', $rsAdmins);
+	$smarty->assign('mainAdmin', $mainAdmin);
+	$smarty->assign('PageTitle', 'Адміністратори сайту');
+
+	loadTemplate($smarty, 'adminHeader');
+	loadTemplate($smarty, 'adminAdmin');
+	loadTemplate($smarty, 'adminFooter');
+}
+
+/**
+ * Додавання нового адміністратора
+ */
+function addnewadminAction(){
+	$login = isset($_POST['newAdminName']) ? $_POST['newAdminName'] : null;
+	$pwd = isset($_POST['newAdminPassword']) ? $_POST['newAdminPassword'] : null;
+	$pwd = md5($pwd);
+
+	$res = addNewAdmin($login, $pwd);
+	if($res){
+		$resData['success'] = true;
+		$resData['message'] = "Додано нового адміністратора";
+	} else {
+		$resData['success'] = false;
+		$resData['message'] = "Помилка додавання";
 	}
 
 	echo json_encode($resData);

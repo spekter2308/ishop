@@ -19,8 +19,20 @@ function testAction(){
  */
 function indexAction($smarty){
 
+	//>Пагінатор
+	$paginator = array();
+	$paginator['perPage'] = 9;
+	$paginator['currentPage'] = isset($_GET['page']) ? $_GET['page'] : 1;
+	$paginator['offset'] = ($paginator['currentPage'] * $paginator['perPage']) - $paginator['perPage'];
+	$paginator['link'] = '/index/?page=';
+
+	list($rsProducts, $allCnt) = getLastProducts($paginator['offset'], $paginator['perPage']);
+
+	$paginator['pageCnt'] = ceil($allCnt / $paginator['perPage']);
+	$smarty->assign('paginator', $paginator);
+	//<
+
 	$rsCategories = getAllMainCatsWithChildren();
-	$rsProducts =  getLastProducts(16);
 
 	$smarty->assign("pageTitle", "Головна сторінка сайту");
 	$smarty->assign("rsCategories", $rsCategories);

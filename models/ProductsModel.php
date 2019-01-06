@@ -6,20 +6,23 @@
  */
 
 /**
- * Отримуємо останні додані товари
+ * Отримуємо товари з пагінатором для кожної сторінки
  *
  * @param integer null $limit ліміт товарів
  * @return array масив товарів
  */
-function getLastProducts($limit = null){
+function getLastProducts($offset = 0, $limit = 9){
 	global $db;
-	$sql = "SELECT * FROM products WHERE `status` = 1 ORDER BY id DESC";
-	if($limit){
-		$sql .= " LIMIT {$limit}";
-	}
-	$rs = mysqli_query($db, $sql);
+	$sqlCnt = "SELECT count(id) as cnt FROM `products` WHERE status = '1'";
+	$rs = mysqli_query($db, $sqlCnt);
+	$cnt = createSmartyRsArray($rs);
+	$sql = "SELECT * FROM `products` ORDER BY id DESC";
+	$sql .= " LIMIT {$offset}, {$limit}";
 
-	return createSmartyRsArray($rs);
+	$rs = mysqli_query($db, $sql);
+	$rows = createSmartyRsArray($rs);
+
+	return array($rows, $cnt[0]['cnt']);
 }
 
 

@@ -162,6 +162,64 @@ function updateDatePayment(itemId) {
 		dataType: 'json',
 		success: function (data) {
 			alert(data['message']);
+			location.reload();
 		}
 	})
+}
+
+
+/**
+ * Авторизація адміністратора
+ *
+ */
+function loginAdmin(){
+
+	var postData = getData('#loginAdmin');
+
+	$.ajax({
+		type: 'POST',
+		async: true,
+		url: "/admin/login/",
+		data: postData,
+		dataType: 'json',
+		success: function(data){
+			if (data['success']) {
+				location.reload();
+				//alert("success");
+				$('#loginAdmin').hide();
+
+				//$('#registerBox').hide();
+				//$('#displayName').html(data['displayName']);
+				//$('#userBox').setTimeout(300).show();
+				// заполняем поля на странице заказа
+				/*$('#name').val(data['name']);
+				$('#phone').val(data['phone']);
+				$('#adress').val(data['adress']);
+				$('#btnSaveOrder').show();*/
+			} else {
+				alert(data['message']);
+			}
+		}
+	});
+}
+
+/**
+ * Додавання нового адміністратора
+ */
+function addAdmin() {
+	var postData = getData('#newAdmin');
+
+	$.ajax({
+		type: 'POST',
+		async: false,
+		url: "/admin/addnewadmin/",
+		data: postData,
+		dataType: 'json',
+		success: function(data){
+			if (data['success']){
+				location.reload();
+			}
+		}
+	})
+
 }

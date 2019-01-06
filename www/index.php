@@ -24,6 +24,11 @@ if(isset($_SESSION['user'])){
 	$smarty->assign('arUser', $_SESSION['user']);
 }
 
+//якщо в сесії є дані про авторизованого адміністратора, то передаємо їх в шаблон
+if(isset($_SESSION['admin'])){
+	$smarty->assign('arAdmin', $_SESSION['admin']);
+}
+
 //ініціалізуємо змінну шаблонізатора кількості елементів в корзині
 $smarty->assign('cartCntItems', count($_SESSION['cart']));
 

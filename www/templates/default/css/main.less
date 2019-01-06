@@ -553,11 +553,14 @@ input {
 				}
 			}
 
-			img{
-				max-height: 100%;
-				max-width: 100%;
-				height: auto;
-				width: auto;
+			.listImg {
+				img{
+					max-height: 50px;
+					max-width: 100%;
+					height: auto;
+					width: auto;
+				}
+
 			}
 			&:hover{
 				box-shadow: 0 0 14px black;
@@ -623,7 +626,22 @@ input {
 		}
 	}
 
+	.paginator{
+		font-size: 22px;
+		display: block;
+		width: 100px;
+		margin: 25px auto;
+		height: 30px;
+		line-height: 30px;
+		i{
+			font-size: 22px;
+			font-weight: bold;
+		}
+	}
 }
+
+
+
 #footer{
 	grid-area: footer;
 	display: flex;

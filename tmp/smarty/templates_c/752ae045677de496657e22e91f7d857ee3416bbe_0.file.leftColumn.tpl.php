@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-12-10 20:45:04
+/* Smarty version 3.1.33, created on 2018-12-23 20:24:24
   from 'C:\OSPanel\domains\ishop.local\views\default\leftColumn.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c0ea6207d1808_08709888',
+  'unifunc' => 'content_5c1fc4c825acb6_57922474',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '752ae045677de496657e22e91f7d857ee3416bbe' => 
     array (
       0 => 'C:\\OSPanel\\domains\\ishop.local\\views\\default\\leftColumn.tpl',
-      1 => 1544463904,
+      1 => 1545585864,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c0ea6207d1808_08709888 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c1fc4c825acb6_57922474 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="leftColumn">
 
 	<div class="leftMenu">
@@ -61,14 +61,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<div id="userBox">
 			<a href="/user/" id="displayName"><i class="fa fa-user"></i><?php echo $_smarty_tpl->tpl_vars['arUser']->value['displayName'];?>
 </a>
-			<a href="/user/logout/"><i class="fa fa-sign-out"></i>Выход</a>
+			<a href="/user/logout/"><i class="fa fa-sign-out"></i>Вихід</a>
 		</div>
 
 	<?php } else { ?>
 		<div id="userBox" class="hideme">
 			<a href="/user/" id="displayName"></a>
 			<br>
-			<a href="/user/logout/">Выход</a>
+			<a href="/user/logout/">Вихід</a>
 		</div><br>
 
 		<?php if (!isset($_smarty_tpl->tpl_vars['hideLoginBox']->value)) {?>

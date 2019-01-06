@@ -537,6 +537,163 @@ span.orderStat-green {
   font-weight: 800;
   font-style: italic;
 }
+#loginAdmin {
+  text-align: center;
+}
+#loginAdmin .showHidden {
+  cursor: pointer;
+}
+#loginAdmin .showHidden:hover {
+  margin: 0 20px 20px;
+  background: white;
+  transition: all .3s;
+  color: blue;
+  height: 25px;
+  padding-top: 10px;
+  box-shadow: 2px 2px 3px black;
+}
+#loginAdmin input[type="text"],
+#loginAdmin input[type="email"],
+#loginAdmin input[type="password"] {
+  height: 26px;
+  font-size: 14px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  border-radius: 4px;
+  padding-left: 24px;
+  text-align: start;
+  font-style: italic;
+}
+#loginAdmin input[type="text"]:hover,
+#loginAdmin input[type="email"]:hover,
+#loginAdmin input[type="password"]:hover {
+  box-shadow: 0 0 6px 2px rgba(58, 219, 253, 0.3);
+}
+#loginAdmin input[type="button"] {
+  text-align: center;
+  display: block;
+  margin: 5px auto 20px auto;
+  padding: 13px 30px;
+  font-size: 16px;
+  background: #fff;
+  color: #2c536c;
+  border: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(125, 125, 125, 0.8);
+  /*&:active:before {
+			border: none;
+			//box-shadow: 0 0 10px rgba(0,0,0,.6) inset;
+			width: 178px;
+		}*/
+}
+#loginAdmin input[type="button"]:hover {
+  border-bottom: 3px solid #7db2c3;
+  box-shadow: none;
+  transition: all .5s;
+  background: blue;
+  color: #eee;
+}
+#loginAdmin input[type="button"]:active {
+  width: 178px;
+  border-radius: 5px;
+  border: none;
+  bottom: -7px;
+  box-shadow: none;
+}
+#loginAdmin .input::before {
+  font-family: "FontAwesome";
+  position: absolute;
+  font-size: 20px;
+  padding: 5px 0 0 12px;
+  color: #2c536c;
+}
+#loginAdmin .input:hover::before {
+  color: #319ebc;
+  transition: all .3s;
+}
+#loginAdmin .email::before {
+  content: "\f007";
+}
+#loginAdmin .password::before {
+  content: "\f023";
+}
+#loginAdmin .loginBtn input[type="button"]:active {
+  width: 118px;
+}
+.adminBox {
+  margin-top: 30px;
+  text-align: center;
+}
+.adminBox a {
+  display: block;
+  padding: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: darkslategray;
+  font-size: 17px;
+  font-weight: bold;
+}
+.adminBox a .fa {
+  margin-right: 3px;
+}
+.adminContainer {
+  max-width: 400px;
+  margin: 0 auto;
+}
+#newAdmin {
+  display: flex;
+  max-width: 900px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#newAdmin .newAdminName,
+#newAdmin .newAdminPassword {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#newAdmin .newAdminName h5,
+#newAdmin .newAdminPassword h5 {
+  margin: 5px;
+}
+#newAdmin .newAdminName input,
+#newAdmin .newAdminPassword input {
+  height: 25px;
+  border: 1px #ccc solid;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+#newAdmin input[type="button"] {
+  height: 36px;
+  width: auto;
+  text-align: center;
+  display: block;
+  margin-top: 25px;
+  margin-left: 20px;
+  padding: 2px 10px;
+  font-size: 16px;
+  background: #fff;
+  color: #2c536c;
+  border: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+}
+#newAdmin input[type="button"]:hover {
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.9);
+  transition: all .5s;
+}
+.admins {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin: 5px;
+  font-weight: bold;
+  font-style: italic;
+}
+.admins .id {
+  margin-right: 5px;
+}
 #footer {
   grid-area: footer;
   display: flex;

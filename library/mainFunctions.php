@@ -33,11 +33,21 @@ function loadTemplate($smarty, $templateName){
  * @param int $die параметр зупинки програми
  */
 function d($value = null, $die = 0){
-	echo 'Debug: <br><pre>';
+	function debugOut($a){
+		echo '<br><b>'. basename($a['file']). '<br>'
+			. "&nbsp;<font color='red'>{$a['line']})</font>"
+			. "&nbsp;<font color='green'>{$a['function']}()</font>"
+			. "&nbsp; -- ". dirname($a['file']);
+	}
+
+	echo '<pre>';
+		$trace = debug_backtrace();
+		array_walk($trace, 'debugOut');
+		echo "\n\n";
 	print_r($value);
 	echo '</pre>';
 
-	if($die == 1) die;
+	if($die) die;
 }
 
 /**
