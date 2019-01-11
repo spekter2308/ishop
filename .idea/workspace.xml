@@ -4,29 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/models/CategoriesModel.php" line="3" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fcc445d-e50a-4923-aca7-ab668b000cfa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/mainFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/mainFunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/ProductsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/ProductsModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/smarty/templates_c/3b0415c81913615871489c6216d9fe8fc1faa3ff_0.file.admin.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/smarty/templates_c/3b0415c81913615871489c6216d9fe8fc1faa3ff_0.file.admin.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/smarty/templates_c/677ccb897d674e6e6ddf09cc97d7cef273e30e78_0.file.index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/smarty/templates_c/677ccb897d674e6e6ddf09cc97d7cef273e30e78_0.file.index.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/smarty/templates_c/6bf294abfdd3d323061a3da6cb879afe28a2d08b_0.file.adminLeftColumn.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/smarty/templates_c/6bf294abfdd3d323061a3da6cb879afe28a2d08b_0.file.adminLeftColumn.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/smarty/templates_c/752ae045677de496657e22e91f7d857ee3416bbe_0.file.leftColumn.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/smarty/templates_c/752ae045677de496657e22e91f7d857ee3416bbe_0.file.leftColumn.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/admin.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/adminLeftColumn.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/adminLeftColumn.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/default/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/views/default/index.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/default/leftColumn.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/views/default/leftColumn.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/templates/admin/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/admin/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/templates/admin/css/admin.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/admin/css/admin.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/templates/admin/css/admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/admin/css/admin.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/templates/admin/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/admin/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/templates/default/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/default/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/templates/default/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/default/css/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/templates/default/css/main.less" beforeDir="false" afterPath="$PROJECT_DIR$/www/templates/default/css/main.less" afterDir="false" />
-    </list>
+    <list default="true" id="1fcc445d-e50a-4923-aca7-ab668b000cfa" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -419,18 +397,17 @@
       <workItem from="1545082149999" duration="41412000" />
       <workItem from="1545496598570" duration="2047000" />
       <workItem from="1545566583860" duration="22905000" />
-      <workItem from="1546776678492" duration="6261000" />
+      <workItem from="1546776678492" duration="6972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="569030000" />
+    <option name="totallyTimeSpent" value="569741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1040" extended-state="1" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32979852" />
